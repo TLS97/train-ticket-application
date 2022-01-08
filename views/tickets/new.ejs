@@ -1,0 +1,50 @@
+<% layout('layouts/boilerplate') %>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4 class="card-title mb-3">Purchase a Ticket!</h4>
+                        <h6 class="card-subtitle text-muted mb-3">Insert the information and search for available routes
+                            to you
+                            destination!</h6>
+                        <form action="/<%= user.id %>/tickets/new" method="POST">
+                            <label for="direction">Direction:</label>
+                            <select class="form-select mb-3" aria-label="Select direction" id="direction"
+                                name="direction" required>
+                                <option selected>Choose a direction</option>
+                                <option value="northbound">Northbound</option>
+                                <option value="southbound">Southbound</option>
+                            </select>
+                            <label for="from">From: </label>
+                            <select class="form-select mb-3" aria-label="Select From Station" id="from" name="from"
+                                required>
+                                <option selected>Choose Station</option>
+                                <option value="Oslo S">Oslo S</option>
+                                <option value="Oslo Lufthavn St.">Oslo Lufthavn St.</option>
+                                <option value="Trondheim St.">Trondheim St.</option>
+                                <option value="Trondheim Lufthavn St.">Trondheim Lufthavn St.</option>
+                                <option value="Mo i Rana St.">Mo i Rana St.</option>
+                                <option value="Bodø St.">Bodø St.</option>
+                            </select>
+                            <label for="to">To: </label>
+                            <select class="form-select mb-3" aria-label="Select To Station" id="to" name="to" required>
+                                <option selected>Choose Station</option>
+                                <option value="Oslo S">Oslo S</option>
+                                <option value="Oslo Lufthavn St.">Oslo Lufthavn St.</option>
+                                <option value="Trondheim St.">Trondheim St.</option>
+                                <option value="Trondheim Lufthavn St.">Trondheim Lufthavn St.</option>
+                                <option value="Mo i Rana St.">Mo i Rana St.</option>
+                                <option value="Bodø St.">Bodø St.</option>
+                            </select>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Date:</label>
+                                <input type="date" id="date" name="date" class="form-control" required>
+                            </div>
+                            <button class="btn btn-dark shadow" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

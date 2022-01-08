@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12">
+                <div class="card shadow mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">From <%= ticket.from %> to <%= ticket.to %>
+                        </h5>
+                        <p class="card-text">Date: <%= ticket.date %>
+                        </p>
+                        <hr>
+                        <div class="container">
+                            <h3>Customer ID: <%= user.id %>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <a href="/<%= user.id %>/tickets">Back to my tickets</a>
+            </div>
+
+        </div>
+    </div>

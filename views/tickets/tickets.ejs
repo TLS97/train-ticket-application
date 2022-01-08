@@ -1,0 +1,50 @@
+<% layout('layouts/boilerplate') %>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12">
+                <div class="d-flex mb-3">
+                    <h2 class="card-title">Hello, <%= user.name %>!</h4>
+                            <a href="/<%= user.id %>/tickets/new" class="ms-auto">New
+                                ticket
+                            </a>
+                </div>
+                <% if (tickets.length> 0) { %>
+                    <% tickets.forEach(ticket=> { %>
+                        <div class="card shadow mb-3">
+                            <div class="container mb-3 mt-3">
+                                <h5 class="card-title">From <%= ticket.from %> to <%= ticket.to %>
+                                </h5>
+                                <p class="card-text">Date: <%= ticket.date %>
+                                </p>
+                            </div>
+                            <div class="container">
+                                <div class="row justify-content-start">
+                                    <div class="col-3 pe-0 me-0">
+                                        <a href="/<%= user.id %>/tickets/<%= ticket._id %>"
+                                            class="btn btn-dark shadow mb-3">Show
+                                            Ticket</a>
+                                    </div>
+                                    <div class="col-3 ps-0 ms-0">
+                                        <form class="form-inline"
+                                            action="/<%= user.id %>/tickets/<%= ticket.id %>?_method=DELETE"
+                                            method="POST">
+                                            <button class="btn btn-danger shadow" type="submit">Delete
+                                                Ticket</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            <% }) %>
+                <% } else { %>
+                    <div class="mb-3">
+                        <p class="text-muted">You don't have any tickets yet.
+                            Purchase one and it will show up here!</p>
+                    </div>
+                    <% } %>
+
+        </div>
+    </div>
+
+    </div>
