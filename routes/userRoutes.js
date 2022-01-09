@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const users = require('../controllers/users');
+const passport = require('passport');
 
 router.route('/register')
     .get(users.renderRegisterForm)
@@ -8,6 +9,6 @@ router.route('/register')
 
 router.route('/login')
     .get(users.renderLoginForm)
-    .post(users.login);
+    .post(passport.authenticate('local', { failureFlash: true, failureRedirect: '/fail' }), users.login);
 
 module.exports = router;
