@@ -1,7 +1,7 @@
 # Train Ticket Application
 This is a web application for purchasing tickets from the fictional operator of railways in Norway, named Norwegian Rails. The application allows for a customer to register a user and login, search for available routes on a given date and purchase a ticket. The purchased tickets can be found in the overview on the user's home page. In the event of a ticket inspection, a QR-code for the ticket can be shown from the home page. The ticket can also be canceled.
 
-# Languages, technologies and tools
+# Technical Details
 The Norwegian Rails Ticket Application is a fullstack web application using MongoDB and Node JS on the backend, and vanilla Javascript and Bootstrap on the frontend. In addition, the following tools are used:
 * Passport JS
 * Express JS
