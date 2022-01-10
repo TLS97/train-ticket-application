@@ -8,7 +8,7 @@ The Norwegian Rails Ticket Application is a fullstack web application using Mong
 * Mongoose
 
 
-### How to test the website
+# How to test the website
 All dependencies except for MongoDB is stored in the package.json file and can be installed by entering:
 
 ```
