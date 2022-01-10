@@ -20,7 +20,6 @@ Here is a good resource for
 [installing MongoDB on your machine](https://zarkom.net/blogs/how-to-install-mongodb-for-development-in-windows-3328).
 
 #### Running Node
-
 The project can be run by entering:
 
 ```
