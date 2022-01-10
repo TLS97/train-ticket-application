@@ -12,9 +12,11 @@
                 <h1>Norwegian Rails</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto explicabo illum nesciunt voluptatibus
                     atque tenetur non molestiae repellendus vero aliquid, modi nulla cupiditate molestias? </p>
-                <p>Login or register to purchase your next ticket!</p>
-                <a href="/login" class="btn btn-dark shadow">Login</a>
-                <a href="/register" class="btn btn-outline-dark shadow">Register</a>
+                <% if (!currentUser) { %>
+                    <p>Login or register to purchase your next ticket!</p>
+                    <a href="/login" class="btn btn-dark shadow">Login</a>
+                    <a href="/register" class="btn btn-outline-dark shadow">Register</a>
+                    <% } %>
             </div>
         </div>
     </div>

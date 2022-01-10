@@ -68,6 +68,12 @@ const ticketRoutes = require('./routes/ticketRoutes');
 const userRoutes = require('./routes/userRoutes');
 const seedRoutes = require('./routes/seedRoutes');
 
+app.use((req, res, next) => {
+    res.locals.currentUser = req.user;
+
+    next();
+});
+
 app.use('/', ticketRoutes);
 app.use('/', userRoutes);
 app.use('/', seedRoutes);
@@ -76,6 +82,9 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/about', (req, res) => {
+    res.render('about');
+})
 app.use((req, res) => {
     res.status(404).render('notfound')
 });

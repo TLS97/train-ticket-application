@@ -5,8 +5,8 @@ module.exports.renderLoginForm = (req, res) => {
 };
 
 module.exports.login = async (req, res) => {
-    const username = req.body.username;
-    const user = await User.findOne({ email: username });
+    const email = req.body.username;
+    const user = await User.findOne({ email });
 
     res.redirect(`/${user.id}/tickets`);
     // const { email, password } = req.body;
@@ -39,4 +39,10 @@ module.exports.registerUser = async (req, res) => {
         // req.flash('error', e.message);
         res.redirect('/register');
     }
+}
+
+module.exports.logout = (req, res) => {
+    req.logout();
+    console.log("User is logged out!");
+    res.redirect('/');
 }

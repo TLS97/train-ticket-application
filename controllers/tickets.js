@@ -10,7 +10,7 @@ module.exports.index = async (req, res) => {
 
     const user = await User.findById(id);
     const tickets = await Ticket.find({ '_id': { $in: user.tickets } });
-
+    console.log(user)
     res.render('tickets/tickets', { tickets, user });
 };
 
